@@ -1,47 +1,62 @@
 #include <stdio.h>
- 
-int main() {
-    int option,num;   
-    do {
-        printf("\nEscolha uma peça para ver seu movimento:\n");
-        printf("1. Torre\n");
-        printf("2. Bispo\n");
-        printf("3. Rainha\n");
-        printf("4. Sair\n");
-        printf("Escolha uma opção: \n");
-        scanf("%d", &option);
-       
-        switch(option) 
+void Movimento_torre(int n) 
+{
+    for (int n = 0; n <= 4; n++) 
+    {
+        printf("Cima\n");
+    }
+} 
+void Movimento_bispo(int n)
+{
+    for (int n=1,i=1; i < 5; i++,n++)
+    {
+        
+    }
+    
+    n=0;                    
+    while (n != 5) {                                   
+    printf("Cima Direita,\n");
+    n++;
+    }
+}
+
+void Movimento_Rainha(int n)
+{
+    n=0;
+    do{
+        printf("esquerda\n");
+        n++;
+      } while (n != 8);  
+}
+
+void Movimento_Cavalo(int n)
+{
+    int i = 0;
+        while (i < 2) 
         {
-            case 1:
-                printf("Você escolheu a opção 1 - movimento da torre:\n");
-                    for (int i = 0; i <= 4; i++) {
-                        printf("Cima\n");
-                        }                                
-                break;
-            case 2:
-                printf("Você escolheu a opção 2 - movimento do Bispo:\n");
-                num=0;                    
-                    while (num != 5) {                                   
-                        printf("Cima Direita,\n");
-                        num++;
-                    }
-                break;                
-            case 3:
-                printf("Você escolheu a opção 3 - movimento da Rainha:\n");
-                num=0;
-                    do{
-                        printf("esquerda\n");
-                        num++;
-                      } while (num != 8);                
-                break;
-            case 4:
-                printf("Saindo...\n");
-                break;
-            default:
-              printf("Opção inválida!\n");
+            printf("baixo\n");
+            if (i==1)
+                {
+                int j = 0;
+                while (j != 1) 
+                    {
+                        printf("Esquerda\n");
+                            j++;
+                    }                                       
+                }                    
+                i++;
         }
-    } while (option != 4);
-   
-    return 0;
+}
+
+int main() {
+    printf("Movimento da torre:\n");
+    Movimento_torre(5);
+    printf("\nMovimento do bispo:\n");
+    Movimento_bispo(5);
+    printf("\nMovimento da Rainha:\n");
+    Movimento_Rainha(8);
+    printf("\nMovimento do cavalo\n");
+    Movimento_Cavalo(2);
+      
+    
 }
