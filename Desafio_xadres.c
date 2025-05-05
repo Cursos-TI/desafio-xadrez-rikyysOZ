@@ -15,7 +15,7 @@ int main() {
         {
             case 1:
                 printf("Você escolheu a opção 1 - movimento da torre:\n");
-                    for (int i = 0; i < 5; i++) {
+                    for (int i = 0; i <= 4; i++) {
                         printf("Cima\n");
                         }                                
                 break;
