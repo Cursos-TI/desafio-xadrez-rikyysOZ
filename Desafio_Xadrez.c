@@ -1,0 +1,47 @@
+#include <stdio.h>
+ 
+int main() {
+    int option,num;   
+    do {
+        printf("\nEscolha uma peça para ver seu movimento:\n");
+        printf("1. Torre\n");
+        printf("2. Bispo\n");
+        printf("3. Rainha\n");
+        printf("4. Sair\n");
+        printf("Escolha uma opção: \n");
+        scanf("%d", &option);
+       
+        switch(option) 
+        {
+            case 1:
+                printf("Você escolheu a opção 1 - movimento da torre:\n");
+                    for (int i = 0; i < 5; i++) {
+                        printf("Cima\n");
+                        }                                
+                break;
+            case 2:
+                printf("Você escolheu a opção 2 - movimento do Bispo:\n");
+                num=0;                    
+                    while (num != 5) {                                   
+                        printf("Cima Direita,\n");
+                        num++;
+                    }
+                break;                
+            case 3:
+                printf("Você escolheu a opção 3 - movimento da Rainha:\n");
+                num=0;
+                    do{
+                        printf("esquerda\n");
+                        num++;
+                      } while (num != 8);                
+                break;
+            case 4:
+                printf("Saindo...\n");
+                break;
+            default:
+              printf("Opção inválida!\n");
+        }
+    } while (option != 4);
+   
+    return 0;
+}
