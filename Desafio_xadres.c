@@ -1,51 +1,42 @@
 #include <stdio.h>
 void Movimento_torre(int n) 
 {
-    for (int n = 0; n <= 4; n++) 
+    if (n>0)
     {
-        printf("Cima\n");
-    }
+        printf("Direita\n"); 
+        Movimento_torre(n-1);
+    }   
 } 
 void Movimento_bispo(int n)
 {
-    for (int n=1,i=1; i < 5; i++,n++)
-    {
-        
-    }
-    
-    n=0;                    
-    while (n != 5) {                                   
-    printf("Cima Direita,\n");
-    n++;
-    }
+    for (int n=1; n < 5;n++)
+    {   
+        printf("Cima\n");
+        for (int i = 1; i < 2; i++)
+        {
+            printf("Direita\n");
+        }         
+    } 
 }
 
 void Movimento_Rainha(int n)
-{
-    n=0;
-    do{
+{   
+    if (n>0)
+    {
         printf("esquerda\n");
-        n++;
-      } while (n != 8);  
+        Movimento_Rainha(n-1);
+    }    
 }
 
 void Movimento_Cavalo(int n)
-{
-    int i = 0;
-        while (i < 2) 
-        {
-            printf("baixo\n");
-            if (i==1)
-                {
-                int j = 0;
-                while (j != 1) 
-                    {
-                        printf("Esquerda\n");
-                            j++;
-                    }                                       
-                }                    
-                i++;
-        }
+{    
+    if (n <= 0) return;
+    printf("Cima\n");
+    Movimento_Cavalo(n - 1);
+
+    if (n == 1)
+        printf("direita\n");
+    
 }
 
 int main() {
@@ -56,7 +47,6 @@ int main() {
     printf("\nMovimento da Rainha:\n");
     Movimento_Rainha(8);
     printf("\nMovimento do cavalo\n");
-    Movimento_Cavalo(2);
-      
+    Movimento_Cavalo(2);     
     
 }
