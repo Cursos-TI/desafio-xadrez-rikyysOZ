@@ -7,7 +7,7 @@ void Movimento_torre(int n)
         Movimento_torre(n-1);
     }   
 } 
-void Movimento_bispo(int n)
+void Movimento_bispo(int n)// utilizando extrutura de loop aninhado para os movimentos
 {
     for (int n=1; n < 5;n++)
     {   
@@ -19,7 +19,7 @@ void Movimento_bispo(int n)
     } 
 }
 
-void Movimento_Rainha(int n)
+void Movimento_Rainha(int n)//ultizado chamada recursiva para decrementar os movimentos da rainha
 {   
     if (n>0)
     {
@@ -28,18 +28,17 @@ void Movimento_Rainha(int n)
     }    
 }
 
-void Movimento_Cavalo(int n)
+void Movimento_Cavalo(int n)// utilizando controle de fluxo de execução e chamada reccursiva
 {    
     if (n <= 0) return;
     printf("Cima\n");
     Movimento_Cavalo(n - 1);
 
     if (n == 1)
-        printf("direita\n");
-    
+        printf("direita\n");    
 }
 
-int main() {
+int main() {//numero de movimentos de acordo com o solicitado para cada movimento das peças
     printf("Movimento da torre:\n");
     Movimento_torre(5);
     printf("\nMovimento do bispo:\n");
